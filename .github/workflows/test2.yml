@@ -18,8 +18,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
       - name: AWS EC2 Start and Stop
+        # You may pin to the exact commit or the version.
+        # uses: flyweightrocks/aws-ec2-action@19df5b927875886e10187018dd399bd899c2b668
         uses: flyweightrocks/aws-ec2-action@v1
         with:
-          instance-id:"i-0baafef4a0fc9c235"
+          # Instance ID
+          instance-id: i-0baafef4a0fc9c235
+          # Wait until the instance is running
+          wait-instance-running: true
+          # Stop the instance during post job cleanup
+          stop-instance: true
