@@ -16,6 +16,10 @@ jobs:
 # Below this are each of the steps that are run
     steps:
 # Name of step
+
+      - name: Variables
+        run:
+          echo ${{secrets.AWS_EC2_INSTANCE_ID }}
       - name: Start AWS EC2
         # Run AWS Command on the GitHub Hosted runner which starts the instance using AWS authentication stored in GitHub Secrets (see below how to add)
         run: |
