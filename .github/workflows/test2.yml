@@ -24,7 +24,7 @@ jobs:
         uses: flyweightrocks/aws-ec2-action@v1
         with:
           # Instance ID
-          instance-id: i-0baafef4a0fc9c235
+          instance-id: "i-0baafef4a0fc9c235"
           # Wait until the instance is running
           wait-instance-running: true
           # Stop the instance during post job cleanup
